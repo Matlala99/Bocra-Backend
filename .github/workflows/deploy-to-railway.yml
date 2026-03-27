@@ -46,7 +46,6 @@ jobs:
       - name: Convert repository owner to lowercase
         run: |
           echo "REPO_OWNER_LOWERCASE=$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
-
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
@@ -72,7 +71,6 @@ jobs:
           # Trigger Railway deployment
           # This assumes your Railway project is connected to your GitHub repo
           # Railway will automatically deploy when it detects new commits or Docker image pushes
-
       - name: Notify deployment status
         if: always()
         uses: actions/github-script@v7
