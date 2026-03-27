@@ -1,7 +1,7 @@
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(255) NOT NULL UNIQUE,
-  `password` VARCHAR(255) NOT NULL,
-  `role` VARCHAR(50),
-  PRIMARY KEY (`id`)
+CREATE TABLE IF NOT EXISTS `stats` (
+  `id` VARCHAR(255) NOT NULL PRIMARY KEY,
+  `value` DOUBLE,
+  `suffix` VARCHAR(50),
+  `label` VARCHAR(255),
+  `description` TEXT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
