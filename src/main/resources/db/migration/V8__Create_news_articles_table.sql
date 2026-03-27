@@ -1,1 +1,12 @@
 
+CREATE TABLE IF NOT EXISTS `news` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL,
+  `summary` TEXT NOT NULL,
+  `content` LONGTEXT NOT NULL,
+  `category` VARCHAR(255) NOT NULL,
+  `image_url` VARCHAR(255),
+  `slug` VARCHAR(255),
+  `published_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
