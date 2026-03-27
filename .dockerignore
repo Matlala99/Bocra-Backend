@@ -1,0 +1,34 @@
+# Version control
+.git
+.gitignore
+.gitlab-ci.yml
+.github
+
+# Build and IDE
+target/
+.idea/
+*.iml
+.vscode
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Dependencies
+.m2/
+node_modules/
+
+# Documentation
+*.md
+docs/
+
+# Logs
+logs/
+*.log
+
+# Environment files
+.env
+.env.local
+
+# Test files
+src/test/

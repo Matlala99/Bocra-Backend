@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: ${SERVER_PORT:8083}
 
   error:
     include-message: always
@@ -8,13 +8,13 @@ spring:
   application:
     name: hackathon-backend
   datasource:
-    url: jdbc:mysql://localhost:3306/bocra_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: root
-    password: root
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/bocra_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:root}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
     show-sql: true
     properties:
       hibernate:
@@ -23,10 +23,10 @@ spring:
 
 app:
   jwt:
-    secret: aVeryLongSecureSecretKeyForHackathonDemoDoNotUseInProd1234567890
-    expiration-ms: 86400000 # 24 Hours
+    secret: ${APP_JWT_SECRET:aVeryLongSecureSecretKeyForHackathonDemoDoNotUseInProd1234567890}
+    expiration-ms: ${APP_JWT_EXPIRATION_MS:86400000} # 24 Hours
   cors:
-    allowed-origins: https://bocra-hackathon-iota.vercel.app # Next.js frontend
+    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:https://bocra-hackathon-iota.vercel.app}
 
 logging:
   level:
