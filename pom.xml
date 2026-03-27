@@ -84,6 +84,12 @@
             <version>7.6.0</version>
         </dependency>
 
+        <!-- Database Migrations -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-flyway</artifactId>
+        </dependency>
+
         <!-- Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
